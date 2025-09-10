@@ -4,19 +4,6 @@
 
 Welcome to the Verbum SDK samples repository! This collection provides comprehensive examples and code samples demonstrating how to integrate the **Verbum API** for real-time speech-to-text transcription in your applications.
 
-## 🚀 What is Verbum SDK?
-
-Verbum SDK is a powerful, real-time speech-to-text API that provides:
-
-- **🎤 Real-time transcription** - Stream audio and get instant transcription results
-- **🌍 Multi-language support** - Support for multiple languages and dialects
-- **🔄 Live interim results** - Get partial transcription as users speak
-- **🛡️ Privacy features** - Built-in PII redaction and profanity filtering
-- **🎯 Speaker diarization** - Identify different speakers in conversations
-- **💭 Sentiment analysis** - Understand the emotional tone of speech
-- **🌐 Translation** - Real-time translation to multiple target languages
-- **📊 High accuracy** - Advanced AI models for precise transcription
-
 ##  Quick Start
 
 ### Prerequisites
@@ -244,20 +231,6 @@ Each sample demonstrates different integration patterns for the Verbum API:
 - **Result Processing**: Handling both interim (partial) and final transcription results
 - **Error Recovery**: Implementing robust error handling for network issues, audio device problems, and API errors
 
-## 📊 Use Cases
-
-The Verbum SDK is perfect for:
-
-- **🎙️ Live Transcription Applications** - Real-time meeting transcripts, podcasts
-- **📞 Call Center Solutions** - Customer service transcription and analysis
-- **👩‍🦽 Accessibility Tools** - Live captions and voice-to-text interfaces
-- **🎓 Educational Platforms** - Lecture transcription and language learning
-- **🤖 Voice Assistants** - Command recognition and conversational AI
-- **📹 Video Conferencing** - Real-time subtitles and meeting notes
-- **📱 Mobile Applications** - Voice input and dictation features
-- **📂 Audio File Processing** - Batch transcription of recorded audio files
-- **🔍 Content Analysis** - Automated transcription for media and research
-
 ## 🔧 Troubleshooting
 
 ### Common Issues
@@ -277,13 +250,6 @@ The Verbum SDK is perfect for:
    - Speak clearly and at normal pace
    - Check microphone quality and positioning
    - Verify correct language setting
-
-### Getting Help
-
-- **📚 Complete Documentation:** [Verbum SDK Documentation](https://sdk-docs.verbum.ai/#/)
-- **💬 Support:** [support@verbum.ai](mailto:support@verbum.ai)
-- **🎮 Community:** [Discord Community](https://discord.gg/verbum)
-- **🐛 Issues:** [GitHub Issues](https://github.com/getstandup/verbum-sdk-samples/issues)
 
 ## 📄 License
 
