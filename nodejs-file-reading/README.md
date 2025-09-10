@@ -139,7 +139,7 @@ Edit the `CONFIG` object in `index.js`:
 ```javascript
 const CONFIG = {
   // Replace with your actual server URL
-  serverUrl: 'ws://localhost:3000',
+  serverUrl: 'wss://sdk.verbum.ai',
 
   // Replace with your actual API key
   apiKey: 'your-api-key-here',

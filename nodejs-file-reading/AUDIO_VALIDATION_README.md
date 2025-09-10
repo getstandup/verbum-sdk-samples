@@ -170,7 +170,7 @@ async function main() {
 
 ```javascript
 const CONFIG = {
-  serverUrl: 'ws://localhost:3000',
+  serverUrl: 'wss://sdk.verbum.ai',
   apiKey: 'your-api-key',
   audioFile: './audio-8khz.wav', // 8kHz file
   sttOptions: {
@@ -191,7 +191,7 @@ await client.connect(); // Connects with correct params
 
 ```javascript
 const CONFIG = {
-  serverUrl: 'ws://localhost:3000',
+  serverUrl: 'wss://sdk.verbum.ai',
   apiKey: 'your-api-key',
   audioFile: './audio-16khz.wav', // 16kHz file
   sttOptions: {

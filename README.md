@@ -251,10 +251,7 @@ Each sample demonstrates different integration patterns for the Verbum API:
    - Check microphone quality and positioning
    - Verify correct language setting
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 **Ready to get started?** Choose a sample from the repository and follow the setup instructions. Happy coding! 🚀
 
-*For more information about Verbum API features and pricing, visit [verbum.ai](https://verbum.ai)*
+*For more information about Verbum API features visit [Verbum SDK Documentation](https://sdk-docs.verbum.ai/#/)*
