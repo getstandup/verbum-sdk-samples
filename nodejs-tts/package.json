@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-tts-example",
+  "version": "1.0.0",
+  "description": "Standalone Node.js examples for Text-To-Speech via HTTP and WebSocket (Socket.IO)",
+  "main": "http-tts.js",
+  "scripts": {
+    "http": "node http-tts.js",
+    "websocket": "node websocket-tts.js",
+    "sequential": "node sequential-tts.js"
+  },
+  "keywords": [
+    "tts",
+    "text-to-speech",
+    "websocket",
+    "socket.io",
+    "http",
+    "audio",
+    "vcall-seamless"
+  ],
+  "author": "vcall-seamless",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "socket.io-client": "^4.7.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

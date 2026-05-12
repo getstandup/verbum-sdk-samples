@@ -60,6 +60,32 @@ npm install
 node index.js
 ```
 
+### 🔊 Node.js Text-to-Speech
+
+**Location:** [`nodejs-tts/`](./nodejs-tts/)
+
+A Node.js implementation demonstrating Text-to-Speech synthesis via both the HTTP REST endpoint and the Socket.IO WebSocket endpoint. Includes sequential synthesis to validate multi-turn WebSocket sessions.
+
+**Features:**
+- HTTP REST synthesis with plain text and SSML support
+- WebSocket (Socket.IO) streaming synthesis
+- Sequential multi-sentence synthesis over a single persistent connection
+- Configurable voice, audio format, and API host via environment variables
+- Outputs audio as MP3 files
+
+**Quick Start:**
+```bash
+cd nodejs-tts
+npm install
+cp .env.example .env
+# Edit .env to set your API_KEY
+npm run http         # HTTP synthesis → output-http-plain.mp3 + output-http-ssml.mp3
+npm run websocket    # WebSocket synthesis → output-websocket.mp3
+npm run sequential   # Sequential synthesis → output-seq-1/2/3.mp3
+```
+
+> **Requires Node.js ≥ 18**
+
 ## 🎛️ API Configuration Options
 
 The Verbum API supports extensive configuration through query parameters:
