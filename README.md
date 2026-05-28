@@ -17,6 +17,144 @@ The Verbum API uses WebSocket connections with Socket.IO for real-time communica
 
 ## 📋 Available Samples
 
+### 🌐 Browser-based Examples
+
+#### 🎤 Browser Speech-to-Text
+
+**Location:** [`browser-stt/`](./browser-stt/)
+
+A web-based example for real-time Speech-to-Text transcription using the Verbum API via WebSocket.
+
+**Features:**
+- Real-time audio transcription
+- Multiple language support
+- Optional speaker diarization, sentiment analysis, and PII redaction
+- Live transcript display
+- Results storage
+
+**Quick Start:**
+```bash
+# Open index.html directly or use a local server
+cd browser-stt
+python -m http.server 8000
+# Then visit http://localhost:8000
+```
+
+#### 📝 Browser Text Analysis
+
+**Location:** [`browser-text-analysis/`](./browser-text-analysis/)
+
+A web-based example for text analysis: sentiment analysis, named entity recognition, and PII redaction.
+
+**Features:**
+- Sentiment analysis
+- Named entity recognition (NER)
+- PII redaction
+- Real-time results
+
+**Quick Start:**
+```bash
+cd browser-text-analysis
+python -m http.server 8000
+# Then visit http://localhost:8000
+```
+
+#### 🌐 Browser Translation
+
+**Location:** [`browser-translation/`](./browser-translation/)
+
+A web-based example for real-time text translation using the Verbum API.
+
+**Features:**
+- Real-time text translation
+- Multiple language support
+- Auto language detection
+- Translation history
+
+**Quick Start:**
+```bash
+cd browser-translation
+python -m http.server 8000
+# Then visit http://localhost:8000
+```
+
+---
+
+### 🟢 Node.js Speech-to-Text (STT)
+
+**Location:** [`nodejs-stt/`](./nodejs-stt/)
+
+Standalone scripts for real-time Speech-to-Text via WebSocket, including diarization, sentiment analysis, and PII redaction.
+
+**Features:**
+- Real-time and file-based transcription
+- Speaker diarization
+- Sentiment analysis
+- PII redaction
+
+**Quick Start:**
+```bash
+cd nodejs-stt
+npm install
+cp .env.example .env
+# Edit .env to set your API_KEY
+npm run basic       # Basic transcription
+npm run diarization # With speaker diarization
+npm run sentiment   # With sentiment analysis
+npm run redact      # With PII redaction
+npm run mixed       # Multiple features
+```
+
+### 🟢 Node.js Text Analysis
+
+**Location:** [`nodejs-text-analysis/`](./nodejs-text-analysis/)
+
+Standalone scripts for text analysis: sentiment analysis, NER, summarization, and PII redaction.
+
+**Features:**
+- Sentiment analysis
+- Named entity recognition
+- Text summarization
+- PII redaction
+
+**Quick Start:**
+```bash
+cd nodejs-text-analysis
+npm install
+cp .env.example .env
+# Edit .env to set your API_KEY
+npm run sentiment      # Sentiment analysis
+npm run entities       # Named entity recognition
+npm run summarize      # Text summarization
+npm run redact         # PII redaction
+npm run combined       # All features together
+```
+
+### 🟢 Node.js Translation
+
+**Location:** [`nodejs-translation/`](./nodejs-translation/)
+
+Standalone scripts for translation via HTTP REST endpoint, including basic, batch, and multilingual translation.
+
+**Features:**
+- Basic and batch translation
+- Multilingual support
+- Language detection
+
+**Quick Start:**
+```bash
+cd nodejs-translation
+npm install
+cp .env.example .env
+# Edit .env to set your API_KEY
+npm run languages     # List available languages
+npm run basic         # Translate a single text
+npm run batch         # Translate multiple texts
+npm run multilingual  # Translate to multiple languages
+```
+
+---
+
 ### 🐍 Python Real-time Microphone Transcription
 
 **Location:** [`python-real-time/`](./python-real-time/)

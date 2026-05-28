@@ -1,0 +1,29 @@
+{
+  "name": "vcall-seamless-text-analysis-examples",
+  "version": "1.0.0",
+  "description": "Text analysis examples for vcall-seamless API",
+  "main": "index.js",
+  "scripts": {
+    "sentiment": "node sentiment-analysis.js",
+    "entities": "node named-entity-recognition.js",
+    "summarize": "node text-summarization.js",
+    "redact": "node pii-redaction.js",
+    "combined": "node combined-analysis.js"
+  },
+  "keywords": [
+    "text-analysis",
+    "sentiment",
+    "ner",
+    "summarization",
+    "pii",
+    "redaction"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

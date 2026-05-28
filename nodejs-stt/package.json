@@ -1,0 +1,28 @@
+{
+  "name": "vcall-seamless-stt-examples",
+  "version": "1.0.0",
+  "description": "Speech-to-Text examples for vcall-seamless API",
+  "main": "index.js",
+  "scripts": {
+    "basic": "node basic-transcription.js",
+    "diarization": "node diarization.js",
+    "sentiment": "node sentiment-analysis.js",
+    "redact": "node pii-redaction.js",
+    "mixed": "node mixed-features.js"
+  },
+  "keywords": [
+    "stt",
+    "speech-to-text",
+    "transcription",
+    "diarization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io-client": "^4.5.4",
+    "dotenv": "^16.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
