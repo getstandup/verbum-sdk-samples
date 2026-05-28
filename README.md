@@ -224,6 +224,113 @@ npm run sequential   # Sequential synthesis → output-seq-1/2/3.mp3
 
 > **Requires Node.js ≥ 18**
 
+---
+
+### 🐍 Python Examples
+
+#### 🎤 Real-time Microphone Transcription
+
+**Location:** [`python-real-time/`](./python-real-time/)
+
+A Python script for real-time transcription from your microphone using Socket.IO.
+
+**Features:**
+- Real-time microphone audio capture
+- Automatic resampling and format conversion
+- WebSocket connection to Verbum API
+- Configurable parameters
+
+**Quick Start:**
+```bash
+cd python-real-time
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+# Edit microphone_transcription.py to add your API key
+python microphone_transcription.py
+```
+
+#### 🟣 Python Speech-to-Text (STT)
+
+**Location:** [`python-stt/`](./python-stt/)
+
+Standalone scripts for file-based and advanced STT (diarization, sentiment, PII).
+
+**Quick Start:**
+```bash
+cd python-stt
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env to set your API_KEY
+python basic_transcription.py
+python diarization.py
+python sentiment_analysis.py
+python pii_redaction.py
+python mixed_features.py
+```
+
+#### 🟣 Python Text Analysis
+
+**Location:** [`python-text-analysis/`](./python-text-analysis/)
+
+Standalone scripts for sentiment analysis, NER, summarization, and PII redaction.
+
+**Quick Start:**
+```bash
+cd python-text-analysis
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env to set your API_KEY
+python sentiment_analysis.py
+python named_entity_recognition.py
+python text_summarization.py
+python pii_redaction.py
+python combined_analysis.py
+```
+
+#### 🟣 Python Translation
+
+**Location:** [`python-translation/`](./python-translation/)
+
+Standalone scripts for translation (basic, batch, multilingual).
+
+**Quick Start:**
+```bash
+cd python-translation
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env to set your API_KEY
+python get_languages.py
+python basic_translation.py
+python batch_translation.py
+python multilingual_translation.py
+```
+
+#### 🟣 Python Text-to-Speech (TTS)
+
+**Location:** [`python-tts/`](./python-tts/)
+
+Standalone scripts for TTS via HTTP and WebSocket.
+
+**Quick Start:**
+```bash
+cd python-tts
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cp .env.example .env
+# Edit .env to set your API_KEY
+python http_tts.py
+python websocket_tts.py
+python sequential_tts.py
+```
+
 ## 🎛️ API Configuration Options
 
 The Verbum API supports extensive configuration through query parameters:
