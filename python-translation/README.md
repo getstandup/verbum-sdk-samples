@@ -19,10 +19,8 @@ cp .env.example .env
 # → edit .env and set API_KEY and API_HOST
 
 # 4. Run a script
-python get_languages.py
 python basic_translation.py
 python batch_translation.py
-python multilingual_translation.py
 ```
 
 > **Requires Python 3.8+**
@@ -31,21 +29,12 @@ python multilingual_translation.py
 
 ## Scripts
 
-### `get_languages.py`
-
-Retrieves all supported languages for translation.
-
-**Output:**
-- List of language codes and names
-- Supported language pairs
-
----
-
 ### `basic_translation.py`
 
 Translates a single text string to a target language.
 
 **Features:**
+
 - Single text translation
 - Language detection
 - Confidence scores
@@ -59,6 +48,7 @@ Translates a single text string to a target language.
 Translates multiple texts in a single or concurrent requests.
 
 **Features:**
+
 - Multiple text translation
 - Batch processing with concurrency control
 - Individual result tracking
@@ -68,33 +58,21 @@ Translates multiple texts in a single or concurrent requests.
 
 ---
 
-### `multilingual_translation.py`
-
-Translates a single text to multiple target languages.
-
-**Features:**
-- One-to-many translation
-- Multiple language outputs
-- Comparison across languages
-
-**Output:** `output-multilingual.json`
-
----
-
 ## Environment Variables
 
-| Variable       | Default                 | Description                                |
-| -------------- | ----------------------- | ------------------------------------------ |
-| `API_KEY`      | —                       | **Required.** Your vcall-seamless API key. |
-| `API_HOST`     | `https://sdk.verbum.ai` | Base URL of the API (no trailing slash).   |
-| `SOURCE_LANG`  | `en`                    | Source language code (auto-detect if null) |
-| `TARGET_LANG`  | `es`                    | Default target language code               |
+| Variable      | Default                 | Description                                |
+| ------------- | ----------------------- | ------------------------------------------ |
+| `API_KEY`     | —                       | **Required.** Your vcall-seamless API key. |
+| `API_HOST`    | `https://sdk.verbum.ai` | Base URL of the API (no trailing slash).   |
+| `SOURCE_LANG` | `en`                    | Source language code (auto-detect if null) |
+| `TARGET_LANG` | `es`                    | Default target language code               |
 
 ---
 
 ## Supported Languages
 
 Common language codes:
+
 - `en` - English
 - `es` - Spanish
 - `fr` - French
@@ -107,16 +85,18 @@ Common language codes:
 - `ar` - Arabic
 - `ru` - Russian
 
-Run `python get_languages.py` to see the complete list.
+Run `python basic_translation.py` to see the complete list.
 
 ---
 
 ## API Endpoints
 
 ### GET /translator/languages
+
 Lists all supported languages.
 
 ### POST /translator/translate
+
 Translates text from source to target language.
 
 ---
@@ -126,6 +106,7 @@ Translates text from source to target language.
 ```
 requests>=2.28.0
 python-dotenv>=0.21.0
+aiohttp>=3.8.0
 ```
 
 ---

@@ -139,7 +139,7 @@ Edit the `CONFIG` object in `index.js`:
 ```javascript
 const CONFIG = {
   // Replace with your actual server URL
-  serverUrl: 'wss://sdk.verbum.ai',
+  serverUrl: 'ws://localhost:3000',
 
   // Replace with your actual API key
   apiKey: 'your-api-key-here',
@@ -230,7 +230,7 @@ sttOptions: {
 
 ```javascript
 sttOptions: {
-  redact: ["general", "pii", "financial", "corporate"], // Redact sensitive information
+  redact: ["general", "pii", "financial", "corporate", "date"], // Redact sensitive information
 }
 ```
 

@@ -5,10 +5,7 @@
   "main": "index.js",
   "scripts": {
     "basic": "node basic-transcription.js",
-    "diarization": "node diarization.js",
-    "sentiment": "node sentiment-analysis.js",
-    "redact": "node pii-redaction.js",
-    "mixed": "node mixed-features.js"
+    "diarization": "node diarization.js"
   },
   "keywords": [
     "stt",

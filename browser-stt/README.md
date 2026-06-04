@@ -45,6 +45,7 @@ npx http-server
 ### 3. Run
 
 Click **"Start Transcription"** to begin. The application will:
+
 - Connect to the vcall-seamless WebSocket server
 - Stream the audio file in chunks
 - Display interim and final transcripts in real-time
@@ -62,6 +63,7 @@ Click **"Start Transcription"** to begin. The application will:
 ### Converting Audio Files
 
 Using FFmpeg:
+
 ```bash
 # Convert MP3 to WAV (16kHz)
 ffmpeg -i input.mp3 -ar 16000 -ac 1 output.wav
@@ -98,11 +100,10 @@ Emit "startTranscription" event
        ↓
 Stream audio chunks via "audioStream"
        ↓
-Receive interim transcripts via "transcriptionUpdate"
+Receive transcripts via "speechRecognized"
+  (status: 'recognizing' = interim, 'recognized' = final)
        ↓
-Receive final transcript via "transcriptionCompleted"
-       ↓
-Emit "endStream" when done
+Emit "streamEnd" when done
        ↓
 Disconnect
 ```
@@ -110,13 +111,14 @@ Disconnect
 ### Key Events
 
 **Client → Server:**
+
 - `startTranscription` - Initialize transcription with options
 - `audioStream` - Send audio chunk (binary data)
-- `endStream` - Signal end of audio
+- `streamEnd` - Signal end of audio
 
 **Server → Client:**
-- `transcriptionUpdate` - Interim transcript (real-time)
-- `transcriptionCompleted` - Final transcript for segment
+
+- `speechRecognized` - Transcript event (check `status` field: `'recognizing'` = interim, `'recognized'` = final)
 - `transcriptionError` - Error occurred
 
 ---
@@ -137,6 +139,7 @@ const CONFIG = {
 ### Socket.IO Query Parameters
 
 When connecting, the client sends:
+
 ```javascript
 query: {
   token: apiKey,
@@ -165,6 +168,7 @@ query: {
 ## Error Handling
 
 The application handles:
+
 - Connection failures
 - Invalid API keys
 - File read errors
@@ -198,16 +202,19 @@ Errors are displayed in the status area with detailed messages.
 ## Troubleshooting
 
 ### Connection Issues
+
 - Verify API key is correct
 - Check that API host is accessible
 - Ensure CORS is enabled on the server
 
 ### No Transcription Appearing
+
 - Verify audio file format (WAV, PCM recommended)
 - Check that language is set correctly
 - Ensure audio is not corrupted
 
 ### Sentiment/PII Features Not Working
+
 - These are placeholder implementations in the browser
 - For production, integrate with the actual `/text-analysis/*` endpoints
 
@@ -235,6 +242,7 @@ Errors are displayed in the status area with detailed messages.
 ## API Documentation
 
 For more details, see:
+
 - `/translator/` - Translation API
 - `/text-analysis/` - Text analysis API
 - `/speech/synthesize` - Text-to-Speech API
@@ -244,6 +252,7 @@ For more details, see:
 ## Support
 
 For issues or questions:
+
 - Check the console (F12) for error messages
 - Verify your API credentials
 - Ensure your audio file format is correct

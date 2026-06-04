@@ -4,10 +4,8 @@
   "description": "Translation examples for vcall-seamless API",
   "main": "index.js",
   "scripts": {
-    "languages": "node get-languages.js",
     "basic": "node basic-translation.js",
-    "batch": "node batch-translation.js",
-    "multilingual": "node multilingual-translation.js"
+    "batch": "node batch-translation.js"
   },
   "keywords": [
     "translation",

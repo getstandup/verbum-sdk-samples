@@ -1,0 +1,438 @@
+[2025-07-22 00:27:21] No stress test is currently running
+[2025-07-22 00:29:17] Starting 24-hour stress test...
+[2025-07-22 00:29:17] Cron job installed successfully
+[2025-07-22 00:29:17] Test will run every 15 minutes for 24 hours
+[2025-07-22 00:29:17] Logs will be saved to: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs/
+[2025-07-22 00:29:17] To stop manually, run: ./stress-test-runner.sh stop
+[2025-07-22 00:29:17] WARNING: 'at' command not available. You'll need to stop manually after 24 hours.
+[2025-07-22 00:32:29] Stopping stress test...
+[2025-07-22 00:32:29] No crontab to remove
+[2025-07-22 00:32:29] Stress test stopped successfully
+[2025-07-22 00:32:29] Check logs in: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs/
+[2025-07-22 00:32:58] Starting 24-hour stress test...
+[2025-07-22 00:32:58] Cron job installed successfully
+[2025-07-22 00:32:58] Test will run every 15 minutes for 24 hours
+[2025-07-22 00:32:58] Logs will be saved to: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs/
+[2025-07-22 00:32:58] To stop manually, run: ./stress-test-runner.sh stop
+[2025-07-22 00:32:58] 24-hour timer started (PID: 63968)
+[2025-07-22 00:34:01] Stopping stress test...
+[2025-07-22 00:34:01] No crontab to remove
+[2025-07-22 00:34:01] Stopped 24-hour timer process (PID: 63968)
+[2025-07-22 00:34:01] Stress test stopped successfully
+[2025-07-22 00:34:01] Check logs in: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs/
+[2025-07-22 00:34:24] 🚀 Starting 24-hour stress test...
+[2025-07-22 00:34:24] 📁 Script location: /workspace/vcall-seamless/user-cases/nodejs-file-reading
+[2025-07-22 00:34:24] 📄 Target file: /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 00:34:24] 📂 Logs directory: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs
+[2025-07-22 00:34:24] ✅ Stress test started successfully!
+[2025-07-22 00:34:24] 🔄 Running every 15 minutes for 24 hours
+[2025-07-22 00:34:24] 🆔 Background process PID: 64398
+[2025-07-22 00:34:24] 🛑 To stop: ./stress-test-pure-bash.sh stop
+[2025-07-22 00:34:24] 📊 To check status: ./stress-test-pure-bash.sh status
+[2025-07-22 00:34:24] 📋 To view logs: ./stress-test-pure-bash.sh logs
+[2025-07-22 00:34:38] 🟢 Stress test is RUNNING
+[2025-07-22 00:34:38] ⏱️  Elapsed time: 0h 0m
+[2025-07-22 00:34:38] ⏳ Remaining time: ~24h
+[2025-07-22 00:34:38] 🔄 Background process: ACTIVE (PID: 64398)
+[2025-07-22 00:35:31] 🟢 Stress test is RUNNING
+[2025-07-22 00:35:31] ⏱️  Elapsed time: 0h 1m
+[2025-07-22 00:35:31] ⏳ Remaining time: ~24h
+[2025-07-22 00:35:31] 🔄 Background process: ACTIVE (PID: 64398)
+[2025-07-22 00:37:17] 🛑 Stopping stress test...
+[2025-07-22 00:37:17] 🔪 Killed background process (PID: 64398)
+[2025-07-22 00:37:17] ✅ Stress test stopped successfully
+[2025-07-22 00:37:17] 📂 Check logs in: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs/
+[2025-07-22 00:37:24] 🚀 Starting 24-hour stress test...
+[2025-07-22 00:37:24] 📁 Script location: /workspace/vcall-seamless/user-cases/nodejs-file-reading
+[2025-07-22 00:37:24] 📄 Target file: /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 00:37:24] 📂 Logs directory: /workspace/vcall-seamless/user-cases/nodejs-file-reading/logs
+[2025-07-22 00:37:24] ✅ Stress test started successfully!
+[2025-07-22 00:37:24] 🔄 Running every 15 minutes for 24 hours
+[2025-07-22 00:37:24] Starting 24-hour stress test loop (PID: 65380)
+[2025-07-22 00:37:24] 🆔 Background process PID: 65380
+[2025-07-22 00:37:24] Will run until: 2025-07-23 00:37:24
+[2025-07-22 00:37:24] 🛑 To stop: ./stress-test-pure-bash.sh stop
+[2025-07-22 00:37:24] 📊 To check status: ./stress-test-pure-bash.sh status
+[2025-07-22 00:37:24] === Iteration 1 (0h 0m elapsed) ===
+[2025-07-22 00:37:24] 📋 To view logs: ./stress-test-pure-bash.sh logs
+[2025-07-22 00:37:24] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 00:37:40] ✅ Execution successful
+[2025-07-22 00:37:40] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 00:52:41] === Iteration 2 (0h 15m elapsed) ===
+[2025-07-22 00:52:41] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 00:52:56] ✅ Execution successful
+[2025-07-22 00:52:56] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 01:07:57] === Iteration 3 (0h 30m elapsed) ===
+[2025-07-22 01:07:57] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 01:08:13] ✅ Execution successful
+[2025-07-22 01:08:13] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 01:23:13] === Iteration 4 (0h 45m elapsed) ===
+[2025-07-22 01:23:13] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 01:23:29] ✅ Execution successful
+[2025-07-22 01:23:29] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 01:38:29] === Iteration 5 (1h 1m elapsed) ===
+[2025-07-22 01:38:29] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 01:38:45] ✅ Execution successful
+[2025-07-22 01:38:45] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 01:53:45] === Iteration 6 (1h 16m elapsed) ===
+[2025-07-22 01:53:45] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 01:54:02] ✅ Execution successful
+[2025-07-22 01:54:02] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 02:09:02] === Iteration 7 (1h 31m elapsed) ===
+[2025-07-22 02:09:02] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 02:09:18] ✅ Execution successful
+[2025-07-22 02:09:18] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 02:24:18] === Iteration 8 (1h 46m elapsed) ===
+[2025-07-22 02:24:18] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 02:24:34] ✅ Execution successful
+[2025-07-22 02:24:34] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 02:39:34] === Iteration 9 (2h 2m elapsed) ===
+[2025-07-22 02:39:34] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 02:39:50] ✅ Execution successful
+[2025-07-22 02:39:50] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 02:54:50] === Iteration 10 (2h 17m elapsed) ===
+[2025-07-22 02:54:50] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 02:55:06] ✅ Execution successful
+[2025-07-22 02:55:06] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 03:10:06] === Iteration 11 (2h 32m elapsed) ===
+[2025-07-22 03:10:06] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 03:10:22] ✅ Execution successful
+[2025-07-22 03:10:22] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 03:25:23] === Iteration 12 (2h 47m elapsed) ===
+[2025-07-22 03:25:23] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 03:25:38] ✅ Execution successful
+[2025-07-22 03:25:38] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 03:40:39] === Iteration 13 (3h 3m elapsed) ===
+[2025-07-22 03:40:39] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 03:40:55] ✅ Execution successful
+[2025-07-22 03:40:55] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 03:55:55] === Iteration 14 (3h 18m elapsed) ===
+[2025-07-22 03:55:55] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 03:56:11] ✅ Execution successful
+[2025-07-22 03:56:11] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 04:11:11] === Iteration 15 (3h 33m elapsed) ===
+[2025-07-22 04:11:11] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 04:11:27] ✅ Execution successful
+[2025-07-22 04:11:27] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 04:26:27] === Iteration 16 (3h 49m elapsed) ===
+[2025-07-22 04:26:27] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 04:26:43] ✅ Execution successful
+[2025-07-22 04:26:43] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 04:41:43] === Iteration 17 (4h 4m elapsed) ===
+[2025-07-22 04:41:43] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 04:41:59] ✅ Execution successful
+[2025-07-22 04:41:59] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 04:57:00] === Iteration 18 (4h 19m elapsed) ===
+[2025-07-22 04:57:00] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 04:57:16] ✅ Execution successful
+[2025-07-22 04:57:16] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 05:12:16] === Iteration 19 (4h 34m elapsed) ===
+[2025-07-22 05:12:16] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 05:12:32] ✅ Execution successful
+[2025-07-22 05:12:32] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 05:27:32] === Iteration 20 (4h 50m elapsed) ===
+[2025-07-22 05:27:32] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 05:27:48] ✅ Execution successful
+[2025-07-22 05:27:48] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 05:42:48] === Iteration 21 (5h 5m elapsed) ===
+[2025-07-22 05:42:48] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 05:43:04] ✅ Execution successful
+[2025-07-22 05:43:04] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 05:58:05] === Iteration 22 (5h 20m elapsed) ===
+[2025-07-22 05:58:05] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 05:58:21] ✅ Execution successful
+[2025-07-22 05:58:21] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 06:13:21] === Iteration 23 (5h 35m elapsed) ===
+[2025-07-22 06:13:21] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 06:13:37] ✅ Execution successful
+[2025-07-22 06:13:37] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 06:28:37] === Iteration 24 (5h 51m elapsed) ===
+[2025-07-22 06:28:37] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 06:28:53] ✅ Execution successful
+[2025-07-22 06:28:53] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 06:43:53] === Iteration 25 (6h 6m elapsed) ===
+[2025-07-22 06:43:53] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 06:44:09] ✅ Execution successful
+[2025-07-22 06:44:09] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 06:59:09] === Iteration 26 (6h 21m elapsed) ===
+[2025-07-22 06:59:09] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 06:59:25] ✅ Execution successful
+[2025-07-22 06:59:25] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 07:14:25] === Iteration 27 (6h 37m elapsed) ===
+[2025-07-22 07:14:25] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 07:14:41] ✅ Execution successful
+[2025-07-22 07:14:41] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 07:29:42] === Iteration 28 (6h 52m elapsed) ===
+[2025-07-22 07:29:42] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 07:29:58] ✅ Execution successful
+[2025-07-22 07:29:58] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 07:44:58] === Iteration 29 (7h 7m elapsed) ===
+[2025-07-22 07:44:58] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 07:45:14] ✅ Execution successful
+[2025-07-22 07:45:14] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 08:00:14] === Iteration 30 (7h 22m elapsed) ===
+[2025-07-22 08:00:14] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 08:00:30] ✅ Execution successful
+[2025-07-22 08:00:30] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 08:15:30] === Iteration 31 (7h 38m elapsed) ===
+[2025-07-22 08:15:30] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 08:15:46] ✅ Execution successful
+[2025-07-22 08:15:46] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 08:30:47] === Iteration 32 (7h 53m elapsed) ===
+[2025-07-22 08:30:47] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 08:31:02] ✅ Execution successful
+[2025-07-22 08:31:02] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 08:46:03] === Iteration 33 (8h 8m elapsed) ===
+[2025-07-22 08:46:03] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 08:46:19] ✅ Execution successful
+[2025-07-22 08:46:19] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 09:01:19] === Iteration 34 (8h 23m elapsed) ===
+[2025-07-22 09:01:19] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 09:01:35] ✅ Execution successful
+[2025-07-22 09:01:35] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 09:16:35] === Iteration 35 (8h 39m elapsed) ===
+[2025-07-22 09:16:35] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 09:16:51] ✅ Execution successful
+[2025-07-22 09:16:51] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 09:31:51] === Iteration 36 (8h 54m elapsed) ===
+[2025-07-22 09:31:51] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 09:32:07] ✅ Execution successful
+[2025-07-22 09:32:07] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 09:47:07] === Iteration 37 (9h 9m elapsed) ===
+[2025-07-22 09:47:07] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 09:47:23] ✅ Execution successful
+[2025-07-22 09:47:23] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 10:02:23] === Iteration 38 (9h 24m elapsed) ===
+[2025-07-22 10:02:23] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 10:02:39] ✅ Execution successful
+[2025-07-22 10:02:39] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 10:17:40] === Iteration 39 (9h 40m elapsed) ===
+[2025-07-22 10:17:40] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 10:17:56] ✅ Execution successful
+[2025-07-22 10:17:56] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 10:32:56] === Iteration 40 (9h 55m elapsed) ===
+[2025-07-22 10:32:56] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 10:33:12] ✅ Execution successful
+[2025-07-22 10:33:12] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 10:48:12] === Iteration 41 (10h 10m elapsed) ===
+[2025-07-22 10:48:12] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 10:48:28] ✅ Execution successful
+[2025-07-22 10:48:28] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 11:03:28] === Iteration 42 (10h 26m elapsed) ===
+[2025-07-22 11:03:28] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 11:03:44] ✅ Execution successful
+[2025-07-22 11:03:44] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 11:18:44] === Iteration 43 (10h 41m elapsed) ===
+[2025-07-22 11:18:44] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 11:19:00] ✅ Execution successful
+[2025-07-22 11:19:00] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 11:34:00] === Iteration 44 (10h 56m elapsed) ===
+[2025-07-22 11:34:00] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 11:34:16] ✅ Execution successful
+[2025-07-22 11:34:16] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 11:49:16] === Iteration 45 (11h 11m elapsed) ===
+[2025-07-22 11:49:16] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 11:49:32] ✅ Execution successful
+[2025-07-22 11:49:32] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 12:04:33] === Iteration 46 (11h 27m elapsed) ===
+[2025-07-22 12:04:33] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 12:04:49] ✅ Execution successful
+[2025-07-22 12:04:49] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 12:19:49] === Iteration 47 (11h 42m elapsed) ===
+[2025-07-22 12:19:49] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 12:20:05] ✅ Execution successful
+[2025-07-22 12:20:05] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 12:35:05] === Iteration 48 (11h 57m elapsed) ===
+[2025-07-22 12:35:05] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 12:35:21] ✅ Execution successful
+[2025-07-22 12:35:21] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 12:50:21] === Iteration 49 (12h 12m elapsed) ===
+[2025-07-22 12:50:21] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 12:50:37] ✅ Execution successful
+[2025-07-22 12:50:37] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 13:05:37] === Iteration 50 (12h 28m elapsed) ===
+[2025-07-22 13:05:37] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 13:05:53] ✅ Execution successful
+[2025-07-22 13:05:53] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 13:20:53] === Iteration 51 (12h 43m elapsed) ===
+[2025-07-22 13:20:53] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 13:21:09] ✅ Execution successful
+[2025-07-22 13:21:09] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 13:36:10] === Iteration 52 (12h 58m elapsed) ===
+[2025-07-22 13:36:10] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 13:36:26] ✅ Execution successful
+[2025-07-22 13:36:26] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 13:51:26] === Iteration 53 (13h 14m elapsed) ===
+[2025-07-22 13:51:26] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 13:51:42] ✅ Execution successful
+[2025-07-22 13:51:42] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 14:06:42] === Iteration 54 (13h 29m elapsed) ===
+[2025-07-22 14:06:42] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 14:06:58] ✅ Execution successful
+[2025-07-22 14:06:58] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 14:21:58] === Iteration 55 (13h 44m elapsed) ===
+[2025-07-22 14:21:58] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 14:22:14] ✅ Execution successful
+[2025-07-22 14:22:14] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 14:37:14] === Iteration 56 (13h 59m elapsed) ===
+[2025-07-22 14:37:14] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 14:37:30] ✅ Execution successful
+[2025-07-22 14:37:30] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 14:52:30] === Iteration 57 (14h 15m elapsed) ===
+[2025-07-22 14:52:30] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 14:52:46] ✅ Execution successful
+[2025-07-22 14:52:46] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 15:07:47] === Iteration 58 (14h 30m elapsed) ===
+[2025-07-22 15:07:47] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 15:08:02] ✅ Execution successful
+[2025-07-22 15:08:02] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 15:23:03] === Iteration 59 (14h 45m elapsed) ===
+[2025-07-22 15:23:03] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 15:23:19] ✅ Execution successful
+[2025-07-22 15:23:19] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 15:38:19] === Iteration 60 (15h 0m elapsed) ===
+[2025-07-22 15:38:19] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 15:38:35] ✅ Execution successful
+[2025-07-22 15:38:35] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 15:53:35] === Iteration 61 (15h 16m elapsed) ===
+[2025-07-22 15:53:35] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 15:53:51] ✅ Execution successful
+[2025-07-22 15:53:51] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 16:08:51] === Iteration 62 (15h 31m elapsed) ===
+[2025-07-22 16:08:51] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 16:09:07] ✅ Execution successful
+[2025-07-22 16:09:07] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 16:24:08] === Iteration 63 (15h 46m elapsed) ===
+[2025-07-22 16:24:08] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 16:24:24] ✅ Execution successful
+[2025-07-22 16:24:24] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 16:39:24] === Iteration 64 (16h 2m elapsed) ===
+[2025-07-22 16:39:24] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 16:39:40] ✅ Execution successful
+[2025-07-22 16:39:40] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 16:54:40] === Iteration 65 (16h 17m elapsed) ===
+[2025-07-22 16:54:40] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 16:54:56] ✅ Execution successful
+[2025-07-22 16:54:56] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 17:09:56] === Iteration 66 (16h 32m elapsed) ===
+[2025-07-22 17:09:56] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 17:10:12] ✅ Execution successful
+[2025-07-22 17:10:12] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 17:25:12] === Iteration 67 (16h 47m elapsed) ===
+[2025-07-22 17:25:12] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 17:25:28] ✅ Execution successful
+[2025-07-22 17:25:28] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 17:40:29] === Iteration 68 (17h 3m elapsed) ===
+[2025-07-22 17:40:29] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 17:40:45] ✅ Execution successful
+[2025-07-22 17:40:45] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 17:55:45] === Iteration 69 (17h 18m elapsed) ===
+[2025-07-22 17:55:45] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 17:56:01] ✅ Execution successful
+[2025-07-22 17:56:01] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 18:11:01] === Iteration 70 (17h 33m elapsed) ===
+[2025-07-22 18:11:01] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 18:11:17] ✅ Execution successful
+[2025-07-22 18:11:17] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 18:26:17] === Iteration 71 (17h 48m elapsed) ===
+[2025-07-22 18:26:17] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 18:26:33] ✅ Execution successful
+[2025-07-22 18:26:33] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 18:41:33] === Iteration 72 (18h 4m elapsed) ===
+[2025-07-22 18:41:33] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 18:41:49] ✅ Execution successful
+[2025-07-22 18:41:49] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 18:56:50] === Iteration 73 (18h 19m elapsed) ===
+[2025-07-22 18:56:50] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 18:57:06] ✅ Execution successful
+[2025-07-22 18:57:06] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 19:12:06] === Iteration 74 (18h 34m elapsed) ===
+[2025-07-22 19:12:06] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 19:12:22] ✅ Execution successful
+[2025-07-22 19:12:22] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 19:27:22] === Iteration 75 (18h 49m elapsed) ===
+[2025-07-22 19:27:22] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 19:27:38] ✅ Execution successful
+[2025-07-22 19:27:38] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 19:42:39] === Iteration 76 (19h 5m elapsed) ===
+[2025-07-22 19:42:39] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 19:42:55] ✅ Execution successful
+[2025-07-22 19:42:55] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 19:57:55] === Iteration 77 (19h 20m elapsed) ===
+[2025-07-22 19:57:55] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 19:58:11] ✅ Execution successful
+[2025-07-22 19:58:11] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 20:13:11] === Iteration 78 (19h 35m elapsed) ===
+[2025-07-22 20:13:11] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 20:13:27] ✅ Execution successful
+[2025-07-22 20:13:27] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 20:28:27] === Iteration 79 (19h 51m elapsed) ===
+[2025-07-22 20:28:27] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 20:28:43] ✅ Execution successful
+[2025-07-22 20:28:43] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 20:43:44] === Iteration 80 (20h 6m elapsed) ===
+[2025-07-22 20:43:44] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 20:43:59] ✅ Execution successful
+[2025-07-22 20:43:59] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 20:59:00] === Iteration 81 (20h 21m elapsed) ===
+[2025-07-22 20:59:00] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 20:59:16] ✅ Execution successful
+[2025-07-22 20:59:16] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 21:14:16] === Iteration 82 (20h 36m elapsed) ===
+[2025-07-22 21:14:16] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 21:14:32] ✅ Execution successful
+[2025-07-22 21:14:32] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 21:29:32] === Iteration 83 (20h 52m elapsed) ===
+[2025-07-22 21:29:32] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 21:29:48] ✅ Execution successful
+[2025-07-22 21:29:48] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 21:44:48] === Iteration 84 (21h 7m elapsed) ===
+[2025-07-22 21:44:48] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 21:45:04] ✅ Execution successful
+[2025-07-22 21:45:04] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 22:00:04] === Iteration 85 (21h 22m elapsed) ===
+[2025-07-22 22:00:05] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 22:00:21] ✅ Execution successful
+[2025-07-22 22:00:21] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 22:15:21] === Iteration 86 (21h 37m elapsed) ===
+[2025-07-22 22:15:21] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 22:15:37] ✅ Execution successful
+[2025-07-22 22:15:37] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 22:30:37] === Iteration 87 (21h 53m elapsed) ===
+[2025-07-22 22:30:37] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 22:30:53] ✅ Execution successful
+[2025-07-22 22:30:53] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 22:45:53] === Iteration 88 (22h 8m elapsed) ===
+[2025-07-22 22:45:53] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 22:46:09] ✅ Execution successful
+[2025-07-22 22:46:09] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 23:01:09] === Iteration 89 (22h 23m elapsed) ===
+[2025-07-22 23:01:09] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 23:01:25] ✅ Execution successful
+[2025-07-22 23:01:25] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 23:16:25] === Iteration 90 (22h 39m elapsed) ===
+[2025-07-22 23:16:25] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 23:16:41] ✅ Execution successful
+[2025-07-22 23:16:41] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 23:31:42] === Iteration 91 (22h 54m elapsed) ===
+[2025-07-22 23:31:42] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 23:31:58] ✅ Execution successful
+[2025-07-22 23:31:58] 💤 Waiting 15 minutes until next execution...
+[2025-07-22 23:46:58] === Iteration 92 (23h 9m elapsed) ===
+[2025-07-22 23:46:58] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-22 23:47:14] ✅ Execution successful
+[2025-07-22 23:47:14] 💤 Waiting 15 minutes until next execution...
+[2025-07-23 00:02:14] === Iteration 93 (23h 24m elapsed) ===
+[2025-07-23 00:02:14] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-23 00:02:30] ✅ Execution successful
+[2025-07-23 00:02:30] 💤 Waiting 15 minutes until next execution...
+[2025-07-23 00:17:30] === Iteration 94 (23h 40m elapsed) ===
+[2025-07-23 00:17:30] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-23 00:17:46] ✅ Execution successful
+[2025-07-23 00:17:46] 💤 Waiting 15 minutes until next execution...
+[2025-07-23 00:32:46] === Iteration 95 (23h 55m elapsed) ===
+[2025-07-23 00:32:46] Executing: node /workspace/vcall-seamless/user-cases/nodejs-file-reading/index.js
+[2025-07-23 00:33:02] ✅ Execution successful
+[2025-07-23 00:33:02] 💤 Waiting 15 minutes until next execution...
+[2025-07-23 00:48:03] 🎉 24-hour stress test completed successfully!
+[2025-07-23 00:48:03] Total iterations: 95

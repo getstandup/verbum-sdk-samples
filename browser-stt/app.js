@@ -49,10 +49,13 @@ const DOM = {
 
 function updateStatus(message, type = 'connecting') {
   DOM.status.className = `status ${type}`;
-  DOM.status.innerHTML = `
-    <span class="status-indicator"></span>
-    <span>${message}</span>
-  `;
+  DOM.status.textContent = '';
+  const indicator = document.createElement('span');
+  indicator.className = 'status-indicator';
+  const text = document.createElement('span');
+  text.textContent = message;
+  DOM.status.appendChild(indicator);
+  DOM.status.appendChild(text);
 }
 
 // ---------------------------------------------------------------------------
@@ -72,7 +75,7 @@ function connectWebSocket() {
   return new Promise((resolve, reject) => {
     updateStatus('Connecting to server...', 'connecting');
 
-    STATE.socket = io(`${apiHost}/speech`, {
+    STATE.socket = io(`${apiHost}/listen`, {
       query: {
         token: apiKey,
         language: language,
@@ -92,31 +95,32 @@ function connectWebSocket() {
       reject(error);
     });
 
-    STATE.socket.on('transcriptionUpdate', (data) => {
-      STATE.interimTranscript = data.transcript || '';
-      renderTranscript();
-    });
+    STATE.socket.on('speechRecognized', (data) => {
+      const status = data.status || '';
+      if (status === 'recognizing') {
+        STATE.interimTranscript = data.text || '';
+        renderTranscript();
+      } else if (status === 'recognized') {
+        const transcript = data.text || '';
+        if (transcript && !STATE.finalTranscript.includes(transcript)) {
+          STATE.finalTranscript += (STATE.finalTranscript ? ' ' : '') + transcript;
+        }
 
-    STATE.socket.on('transcriptionCompleted', (data) => {
-      const transcript = data.transcript || '';
-      if (transcript && !STATE.finalTranscript.includes(transcript)) {
-        STATE.finalTranscript += (STATE.finalTranscript ? ' ' : '') + transcript;
-      }
+        // Store result with metadata
+        STATE.results.push({
+          transcript: transcript,
+          language: data.language,
+          confidence: data.confidence,
+          timestamp: new Date().toISOString(),
+        });
 
-      // Store result with metadata
-      STATE.results.push({
-        transcript: transcript,
-        language: data.language,
-        confidence: data.confidence,
-        timestamp: new Date().toISOString(),
-      });
+        STATE.interimTranscript = '';
+        renderTranscript();
 
-      STATE.interimTranscript = '';
-      renderTranscript();
-
-      // Check if user wants additional analysis
-      if (DOM.sentiment.checked || DOM.redact.checked) {
-        analyzeTranscript(transcript);
+        // Check if user wants additional analysis
+        if (DOM.sentiment.checked || DOM.redact.checked) {
+          analyzeTranscript(transcript);
+        }
       }
     });
 
@@ -179,7 +183,7 @@ async function startTranscription() {
   const streamInterval = setInterval(() => {
     if (offset >= audioData.length) {
       clearInterval(streamInterval);
-      STATE.socket.emit('endStream');
+      STATE.socket.emit('streamEnd');
       STATE.isTranscribing = false;
       DOM.startBtn.disabled = false;
       DOM.stopBtn.disabled = true;
@@ -203,7 +207,7 @@ async function startTranscription() {
 
 function stopTranscription() {
   if (STATE.socket && STATE.isTranscribing) {
-    STATE.socket.emit('endStream');
+    STATE.socket.emit('streamEnd');
     STATE.isTranscribing = false;
     DOM.startBtn.disabled = false;
     DOM.stopBtn.disabled = true;

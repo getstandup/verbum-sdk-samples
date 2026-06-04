@@ -35,10 +35,13 @@ const DOM = {
 
 function updateStatus(message, type = 'idle') {
   DOM.status.className = `status ${type}`;
-  DOM.status.innerHTML = `
-    <span class="status-indicator"></span>
-    <span>${message}</span>
-  `;
+  DOM.status.textContent = '';
+  const indicator = document.createElement('span');
+  indicator.className = 'status-indicator';
+  const text = document.createElement('span');
+  text.textContent = message;
+  DOM.status.appendChild(indicator);
+  DOM.status.appendChild(text);
 }
 
 // ---------------------------------------------------------------------------
@@ -180,11 +183,12 @@ function renderResults(results) {
   if (results.sentiment) {
     const sentiment = results.sentiment;
     const sentimentClass = `sentiment-${sentiment.sentiment || 'neutral'}`;
-    const icon = {
-      positive: '😊',
-      negative: '😞',
-      neutral: '😐',
-    }[sentiment.sentiment] || '❓';
+    const icon =
+      {
+        positive: '😊',
+        negative: '😞',
+        neutral: '😐',
+      }[sentiment.sentiment] || '❓';
 
     html += `
       <div class="result-section">

@@ -1,6 +1,6 @@
 # Python TTS (Text-to-Speech) Examples
 
-Standalone scripts demonstrating **Text-To-Speech** via HTTP REST endpoint and WebSocket, including basic synthesis and SSML support.
+Standalone scripts demonstrating **Text-To-Speech** via HTTP REST endpoint, including basic synthesis and SSML support.
 
 ---
 
@@ -20,8 +20,6 @@ cp .env.example .env
 
 # 4. Run a script
 python http_tts.py
-python websocket_tts.py
-python sequential_tts.py
 ```
 
 > **Requires Python 3.8+**
@@ -35,37 +33,12 @@ python sequential_tts.py
 Text-to-speech synthesis via HTTP REST endpoint.
 
 **Features:**
+
 - Plain text and SSML support
 - Prosody control (speed, pitch, volume)
 - Multiple audio formats
 
 **Output:** `output-http-plain.mp3`, `output-http-ssml.mp3`
-
----
-
-### `websocket_tts.py`
-
-Text-to-speech synthesis via WebSocket streaming.
-
-**Features:**
-- Real-time audio streaming
-- Single persistent connection
-- Multiple synthesis requests
-
-**Output:** `output-websocket.mp3`
-
----
-
-### `sequential_tts.py`
-
-Sequential synthesis over a single persistent WebSocket connection.
-
-**Features:**
-- Demonstrates VSDK-597 regression test pattern
-- Multiple sentences synthesized in sequence
-- Gated by synthesisCompleted event
-
-**Output:** `output-seq-1.mp3`, `output-seq-2.mp3`, `output-seq-3.mp3`
 
 ---
 
@@ -92,6 +65,7 @@ Sequential synthesis over a single persistent WebSocket connection.
 ## Voice Selection
 
 Examples:
+
 - English (US): `en-US-AriaNeural`, `en-US-GuyNeural`, `en-US-AmberNeural`
 - English (UK): `en-GB-RyanNeural`, `en-GB-SoniaNeural`
 - Spanish: `es-ES-AlvaroNeural`, `es-ES-ConchitaNeural`
@@ -104,7 +78,6 @@ Examples:
 
 ```
 requests>=2.28.0
-python-socketio>=5.5.0
 python-dotenv>=0.21.0
 ```
 
@@ -128,6 +101,5 @@ The HTTP endpoint supports SSML (Speech Synthesis Markup Language) for fine-grai
 
 ## Notes
 
-- `usage: 'browser'` must always be set for WebSocket connections
-- The HTTP endpoint supports SSML; WebSocket accepts plain text only
+- The HTTP endpoint supports SSML for fine-grained control
 - Audio chunks may be received in multiple events; accumulate them with proper buffering

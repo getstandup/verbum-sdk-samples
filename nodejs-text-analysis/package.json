@@ -6,9 +6,7 @@
   "scripts": {
     "sentiment": "node sentiment-analysis.js",
     "entities": "node named-entity-recognition.js",
-    "summarize": "node text-summarization.js",
-    "redact": "node pii-redaction.js",
-    "combined": "node combined-analysis.js"
+    "redact": "node pii-redaction.js"
   },
   "keywords": [
     "text-analysis",

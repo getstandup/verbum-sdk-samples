@@ -2,8 +2,9 @@
  * Basic Speech-to-Text Example
  *
  * Demonstrates STT via WebSocket with real-time streaming:
- *   Namespace: /speech
- *   Events: startTranscription, audioStream, transcriptionUpdate, transcriptionCompleted
+ *   Namespace: /listen
+ *   Events: startTranscription, audioStream, streamEnd (client→server)
+ *           speechRecognized (server→client)
  *
  * Usage:
  *   npm run basic
@@ -50,9 +51,9 @@ class STTClient {
    */
   async connect() {
     return new Promise((resolve, reject) => {
-      console.log(`\nConnecting to ${this.config.apiHost}/speech...`);
+      console.log(`\nConnecting to ${this.config.apiHost}/listen...`);
 
-      this.socket = io(`${this.config.apiHost}/speech`, {
+      this.socket = io(`${this.config.apiHost}/listen`, {
         query: {
           token: this.config.apiKey,
           language: this.config.language,
@@ -76,22 +77,21 @@ class STTClient {
         reject(new Error(error));
       });
 
-      // Listen for transcription updates
-      this.socket.on('transcriptionUpdate', (data) => {
-        this.currentTranscript = data.transcript || '';
-        console.log(`  [interim] ${this.currentTranscript}`);
-      });
-
-      // Listen for completed transcription
-      this.socket.on('transcriptionCompleted', (data) => {
-        this.currentTranscript = data.transcript || '';
-        console.log(`  [final] ${this.currentTranscript}`);
-        this.transcripts.push({
-          transcript: this.currentTranscript,
-          language: data.language,
-          confidence: data.confidence,
-          timestamp: new Date().toISOString(),
-        });
+      // Listen for transcription results
+      this.socket.on('speechRecognized', (data) => {
+        const status = data.status || '';
+        this.currentTranscript = data.text || '';
+        if (status === 'recognizing') {
+          console.log(`  [interim] ${this.currentTranscript}`);
+        } else if (status === 'recognized') {
+          console.log(`  [final] ${this.currentTranscript}`);
+          this.transcripts.push({
+            transcript: this.currentTranscript,
+            language: data.language,
+            confidence: data.confidence,
+            timestamp: new Date().toISOString(),
+          });
+        }
       });
 
       this.socket.on('transcriptionError', (error) => {
@@ -128,7 +128,7 @@ class STTClient {
       const streamInterval = setInterval(() => {
         if (offset >= audioData.length) {
           clearInterval(streamInterval);
-          this.socket.emit('endStream');
+          this.socket.emit('streamEnd');
           resolve();
           return;
         }
@@ -146,8 +146,10 @@ class STTClient {
         reject(new Error('Transcription timeout'));
       }, 300000); // 5 minute timeout
 
-      this.socket.once('transcriptionCompleted', () => {
-        clearTimeout(timeout);
+      this.socket.once('speechRecognized', (data) => {
+        if (data.status === 'recognized') {
+          clearTimeout(timeout);
+        }
       });
     });
   }

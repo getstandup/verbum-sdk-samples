@@ -49,9 +49,9 @@ class DiarizationSTTClient {
    */
   async connect() {
     return new Promise((resolve, reject) => {
-      console.log(`\nConnecting to ${this.config.apiHost}/speech...`);
+      console.log(`\nConnecting to ${this.config.apiHost}/listen...`);
 
-      this.socket = io(`${this.config.apiHost}/speech`, {
+      this.socket = io(`${this.config.apiHost}/listen`, {
         query: {
           token: this.config.apiKey,
           language: this.config.language,
@@ -70,39 +70,41 @@ class DiarizationSTTClient {
         reject(error);
       });
 
-      // Listen for transcription updates with diarization info
-      this.socket.on('transcriptionUpdate', (data) => {
-        if (data.diarization && data.diarization.speaker) {
-          const speaker = `Speaker-${data.diarization.speaker}`;
-          console.log(`  [${speaker}] ${data.transcript}`);
-        }
-      });
-
-      // Listen for completed segments
-      this.socket.on('transcriptionCompleted', (data) => {
-        if (data.segments) {
-          // Store segments with speaker information
-          data.segments.forEach((segment) => {
-            this.segments.push({
-              speaker: `Speaker-${segment.speakerId || '0'}`,
-              transcript: segment.transcript,
-              startTime: segment.startTime,
-              endTime: segment.endTime,
-              confidence: segment.confidence,
-              speakerId: segment.speakerId,
+      // Listen for transcription results with diarization info
+      this.socket.on('speechRecognized', (data) => {
+        const status = data.status || '';
+        if (status === 'recognizing') {
+          if (data.speakerId) {
+            const speaker = `Speaker-${data.speakerId}`;
+            console.log(`  [${speaker}] ${data.text}`);
+          }
+        } else if (status === 'recognized') {
+          if (data.segments) {
+            // Store segments with speaker information
+            data.segments.forEach((segment) => {
+              this.segments.push({
+                speaker: `Speaker-${segment.speakerId || '0'}`,
+                transcript: segment.transcript,
+                startTime: segment.startTime,
+                endTime: segment.endTime,
+                confidence: segment.confidence,
+                speakerId: segment.speakerId,
+              });
+              console.log(
+                `  [Speaker-${segment.speakerId || '0'}] ${segment.transcript} (${segment.startTime}s - ${
+                  segment.endTime
+                }s)`
+              );
             });
-            console.log(
-              `  [Speaker-${segment.speakerId || '0'}] ${segment.transcript} (${segment.startTime}s - ${segment.endTime}s)`
-            );
+          }
+
+          // Also store the full transcript
+          this.segments.push({
+            type: 'full',
+            transcript: data.text,
+            timestamp: new Date().toISOString(),
           });
         }
-
-        // Also store the full transcript
-        this.segments.push({
-          type: 'full',
-          transcript: data.transcript,
-          timestamp: new Date().toISOString(),
-        });
       });
 
       this.socket.on('transcriptionError', (error) => {
@@ -140,7 +142,7 @@ class DiarizationSTTClient {
       const streamInterval = setInterval(() => {
         if (offset >= audioData.length) {
           clearInterval(streamInterval);
-          this.socket.emit('endStream');
+          this.socket.emit('streamEnd');
           resolve();
           return;
         }
@@ -156,8 +158,10 @@ class DiarizationSTTClient {
         reject(new Error('Transcription timeout'));
       }, 300000);
 
-      this.socket.once('transcriptionCompleted', () => {
-        clearTimeout(timeout);
+      this.socket.once('speechRecognized', (data) => {
+        if (data.status === 'recognized') {
+          clearTimeout(timeout);
+        }
       });
     });
   }

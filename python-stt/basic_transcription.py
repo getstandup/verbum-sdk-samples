@@ -2,6 +2,7 @@
 Basic Speech-to-Text Example
 
 Demonstrates STT via WebSocket with real-time streaming using python-socketio.
+Connects to the `listen` namespace and uses the `speechRecognized` server event.
 
 Usage:
     python basic_transcription.py
@@ -51,7 +52,7 @@ class STTClient:
 
     async def connect(self):
         """Connect to the WebSocket server and initialize the transcription session"""
-        print(f"\nConnecting to {self.config['api_host']}/speech...")
+        print(f"\nConnecting to {self.config['api_host']}/listen...")
 
         self.sio = socketio.AsyncClient()
 
@@ -60,23 +61,23 @@ class STTClient:
             self.connected = True
             print("✓ Connected")
 
-        @self.sio.on("transcriptionUpdate")
-        async def on_transcription_update(data):
-            self.current_transcript = data.get("transcript", "")
-            print(f"  [interim] {self.current_transcript}")
-
-        @self.sio.on("transcriptionCompleted")
-        async def on_transcription_completed(data):
-            self.current_transcript = data.get("transcript", "")
-            print(f"  [final] {self.current_transcript}")
-            self.transcripts.append(
-                {
-                    "transcript": self.current_transcript,
-                    "language": data.get("language"),
-                    "confidence": data.get("confidence"),
-                    "timestamp": str(__import__("datetime").datetime.now().isoformat()),
-                }
-            )
+        @self.sio.on("speechRecognized")
+        async def on_speech_recognized(data):
+            status = data.get("status", "")
+            self.current_transcript = data.get("text", "")
+            if status == "recognizing":
+                print(f"  [interim] {self.current_transcript}")
+            elif status == "recognized":
+                print(f"  [final] {self.current_transcript}")
+                self.transcripts.append(
+                    {
+                        "transcript": self.current_transcript,
+                        "language": data.get("language"),
+                        "confidence": data.get("confidence"),
+                        "timestamp": str(__import__("datetime").datetime.now().isoformat()),
+                    }
+                )
+                self.done.set()
 
         @self.sio.on("transcriptionError")
         async def on_transcription_error(data):
@@ -91,7 +92,7 @@ class STTClient:
 
         try:
             await self.sio.connect(
-                f"{self.config['api_host']}/speech",
+                f"{self.config['api_host']}/listen",
                 auth={"token": self.config["api_key"]},
                 transports=["websocket"],
                 headers={"language": self.config["language"], "usage": "browser"},
@@ -113,7 +114,7 @@ class STTClient:
             audio_data = f.read()
 
         # Emit start event with STT options
-        self.sio.emit(
+        await self.sio.emit(
             "startTranscription",
             {
                 "language": [self.config["language"]],
@@ -132,12 +133,12 @@ class STTClient:
                 offset += chunk_size
 
                 # Send audio chunk
-                self.sio.emit("audioStream", chunk)
+                await self.sio.emit("audioStream", chunk)
                 # Simulate real-time streaming (20ms interval)
                 await asyncio.sleep(0.02)
 
             # Signal end of stream
-            self.sio.emit("endStream")
+            await self.sio.emit("streamEnd")
 
             # Wait for completion with timeout
             await asyncio.wait_for(self.done.wait(), timeout=300)

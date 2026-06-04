@@ -1,6 +1,6 @@
 # Node.js Text Analysis Examples
 
-Standalone scripts demonstrating **Text Analysis** features including sentiment analysis, named entity recognition (NER), text summarization, and PII redaction.
+Standalone scripts demonstrating **Text Analysis** features including sentiment analysis, named entity recognition (NER), and PII redaction.
 
 ---
 
@@ -17,9 +17,7 @@ cp .env.example .env
 # 3. Run a script
 npm run sentiment      # Sentiment analysis → output-sentiment.json
 npm run entities       # Named entity recognition → output-entities.json
-npm run summarize      # Text summarization → output-summary.json
 npm run redact         # PII redaction → output-redact.json
-npm run combined       # All features together → output-combined.json
 ```
 
 > **Requires Node.js ≥ 18** (uses the built-in `fetch` API).
@@ -33,11 +31,13 @@ npm run combined       # All features together → output-combined.json
 Analyzes the sentiment of text (positive, negative, neutral).
 
 **Features:**
+
 - Sentiment classification
 - Confidence scores
 - Sentence-level analysis
 
 **Output:**
+
 ```json
 {
   "text": "I love this product! It's amazing.",
@@ -57,11 +57,13 @@ Analyzes the sentiment of text (positive, negative, neutral).
 Identifies named entities (persons, locations, organizations, etc.) in text.
 
 **Features:**
+
 - Entity type classification
 - Entity position in text
 - Confidence scores
 
 **Entity Types:**
+
 - PERSON
 - LOCATION
 - ORGANIZATION
@@ -73,31 +75,18 @@ Identifies named entities (persons, locations, organizations, etc.) in text.
 
 ---
 
-### `npm run summarize` — `text-summarization.js`
-
-Generates concise summaries of longer texts.
-
-**Features:**
-- Automatic summarization
-- Configurable summary length
-- Key point extraction
-
-**Configuration:**
-- Summary length (short, medium, long)
-- Bullet point format
-
----
-
 ### `npm run redact` — `pii-redaction.js`
 
 Detects and redacts personally identifiable information.
 
 **Features:**
+
 - PII detection
 - Automatic redaction
 - Original text preservation
 
 **Redaction Categories:**
+
 - Phone numbers
 - Email addresses
 - Credit card numbers
@@ -108,32 +97,23 @@ Detects and redacts personally identifiable information.
 
 ---
 
-### `npm run combined` — `combined-analysis.js`
-
-Applies multiple analysis features to the same text.
-
-**Demonstrates:**
-- Running multiple analyses in parallel
-- Aggregating results
-- Complex use cases
-
----
-
 ## Environment Variables
 
-| Variable       | Default                 | Description                                |
-| -------------- | ----------------------- | ------------------------------------------ |
-| `API_KEY`      | —                       | **Required.** Your vcall-seamless API key. |
-| `API_HOST`     | `https://sdk.verbum.ai` | Base URL of the API (no trailing slash).   |
+| Variable   | Default                 | Description                                |
+| ---------- | ----------------------- | ------------------------------------------ |
+| `API_KEY`  | —                       | **Required.** Your vcall-seamless API key. |
+| `API_HOST` | `https://sdk.verbum.ai` | Base URL of the API (no trailing slash).   |
 
 ---
 
 ## API Endpoints
 
 ### POST /text-analysis/sentiment
+
 Analyzes sentiment of the provided text.
 
 **Request:**
+
 ```json
 {
   "texts": ["I love this!", "I hate this."]
@@ -141,6 +121,7 @@ Analyzes sentiment of the provided text.
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -157,9 +138,11 @@ Analyzes sentiment of the provided text.
 ```
 
 ### POST /text-analysis/entities
+
 Identifies named entities in text.
 
 **Request:**
+
 ```json
 {
   "texts": ["John works at Google in New York."]
@@ -167,6 +150,7 @@ Identifies named entities in text.
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -181,9 +165,11 @@ Identifies named entities in text.
 ```
 
 ### POST /text-analysis/text-summarize
+
 Generates a summary of the provided text.
 
 **Request:**
+
 ```json
 {
   "text": "Long text to summarize...",
@@ -192,6 +178,7 @@ Generates a summary of the provided text.
 ```
 
 **Response:**
+
 ```json
 {
   "originalText": "Long text to summarize...",
@@ -203,9 +190,11 @@ Generates a summary of the provided text.
 ```
 
 ### POST /text-analysis/redact
+
 Detects and redacts PII in text.
 
 **Request:**
+
 ```json
 {
   "texts": ["Call me at 555-1234 or email john@example.com"],
@@ -214,6 +203,7 @@ Detects and redacts PII in text.
 ```
 
 **Response:**
+
 ```json
 [
   {

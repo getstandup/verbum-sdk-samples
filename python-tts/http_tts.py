@@ -12,6 +12,7 @@ Usage:
 """
 
 import os
+import html
 
 import requests
 from dotenv import load_dotenv
@@ -53,10 +54,11 @@ def build_ssml(text, voice, language, speed_rate):
     Returns:
         SSML string
     """
+    safe_text = html.escape(text)
     return f"""<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="{language}">
   <voice name="{voice}">
     <prosody rate="{speed_rate}">
-      {text}
+      {safe_text}
     </prosody>
   </voice>
 </speak>"""

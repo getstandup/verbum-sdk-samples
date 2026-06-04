@@ -49,7 +49,7 @@ class DiarizationSTTClient:
 
     async def connect(self):
         """Connect to the WebSocket server"""
-        print(f"\nConnecting to {self.config['api_host']}/speech...")
+        print(f"\nConnecting to {self.config['api_host']}/listen...")
 
         self.sio = socketio.AsyncClient()
 
@@ -58,43 +58,43 @@ class DiarizationSTTClient:
             self.connected = True
             print("✓ Connected")
 
-        @self.sio.on("transcriptionUpdate")
-        async def on_update(data):
-            if "diarization" in data and "speaker" in data["diarization"]:
-                speaker = f"Speaker-{data['diarization']['speaker']}"
-                print(f"  [{speaker}] {data.get('transcript', '')}")
+        @self.sio.on("speechRecognized")
+        async def on_speech_recognized(data):
+            status = data.get("status", "")
+            if status == "recognizing":
+                if data.get("speakerId"):
+                    speaker = f"Speaker-{data['speakerId']}"
+                    print(f"  [{speaker}] {data.get('text', '')}")
+            elif status == "recognized":
+                # Store segments with speaker information
+                if "segments" in data:
+                    for segment in data["segments"]:
+                        self.segments.append(
+                            {
+                                "speaker": f"Speaker-{segment.get('speakerId', '0')}",
+                                "transcript": segment.get("transcript"),
+                                "startTime": segment.get("startTime"),
+                                "endTime": segment.get("endTime"),
+                                "confidence": segment.get("confidence"),
+                                "speakerId": segment.get("speakerId"),
+                            }
+                        )
+                        print(
+                            f"  [Speaker-{segment.get('speakerId', '0')}] "
+                            f"{segment.get('transcript')} "
+                            f"({segment.get('startTime', 0)}s - {segment.get('endTime', 0)}s)"
+                        )
 
-        @self.sio.on("transcriptionCompleted")
-        async def on_completed(data):
-            # Store segments with speaker information
-            if "segments" in data:
-                for segment in data["segments"]:
-                    self.segments.append(
-                        {
-                            "speaker": f"Speaker-{segment.get('speakerId', '0')}",
-                            "transcript": segment.get("transcript"),
-                            "startTime": segment.get("startTime"),
-                            "endTime": segment.get("endTime"),
-                            "confidence": segment.get("confidence"),
-                            "speakerId": segment.get("speakerId"),
-                        }
-                    )
-                    print(
-                        f"  [Speaker-{segment.get('speakerId', '0')}] "
-                        f"{segment.get('transcript')} "
-                        f"({segment.get('startTime', 0)}s - {segment.get('endTime', 0)}s)"
-                    )
+                # Store full transcript
+                self.segments.append(
+                    {
+                        "type": "full",
+                        "transcript": data.get("text"),
+                        "timestamp": str(__import__("datetime").datetime.now().isoformat()),
+                    }
+                )
 
-            # Store full transcript
-            self.segments.append(
-                {
-                    "type": "full",
-                    "transcript": data.get("transcript"),
-                    "timestamp": str(__import__("datetime").datetime.now().isoformat()),
-                }
-            )
-
-            self.done.set()
+                self.done.set()
 
         @self.sio.on("transcriptionError")
         async def on_error(data):
@@ -108,7 +108,7 @@ class DiarizationSTTClient:
 
         try:
             await self.sio.connect(
-                f"{self.config['api_host']}/speech",
+                f"{self.config['api_host']}/listen",
                 auth={"token": self.config["api_key"]},
                 transports=["websocket"],
                 headers={"language": self.config["language"], "usage": "browser"},
@@ -128,7 +128,7 @@ class DiarizationSTTClient:
             audio_data = f.read()
 
         # Start transcription with diarization enabled
-        self.sio.emit(
+        await self.sio.emit(
             "startTranscription",
             {
                 "language": [self.config["language"]],
@@ -146,10 +146,10 @@ class DiarizationSTTClient:
             while offset < len(audio_data):
                 chunk = audio_data[offset : offset + chunk_size]
                 offset += chunk_size
-                self.sio.emit("audioStream", chunk)
+                await self.sio.emit("audioStream", chunk)
                 await asyncio.sleep(0.02)
 
-            self.sio.emit("endStream")
+            await self.sio.emit("streamEnd")
             await asyncio.wait_for(self.done.wait(), timeout=300)
         except asyncio.TimeoutError:
             print("Transcription timeout")
